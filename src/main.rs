@@ -14,9 +14,9 @@ fn main() {
 
     // TODO check validity of name
     //println!("{}", args.name);
-    let cargo_toml_template = include_str!("../cases/simple/Cargo.toml");
-    let main_rs_template = include_str!("../cases/simple/src/main.rs");
-    let tests_rs_template = include_str!("../cases/simple/src/tests.rs");
+    let cargo_toml_template = include_str!("../data/simple/Cargo.toml");
+    let main_rs_template = include_str!("../data/simple/src/main.rs");
+    let tests_rs_template = include_str!("../data/simple/src/tests.rs");
     if args.simple {
         std::fs::create_dir_all(&args.name).unwrap();
         let cargo_toml = cargo_toml_template.replace("NAME", &args.name);
