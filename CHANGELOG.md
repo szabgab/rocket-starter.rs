@@ -1,0 +1,10 @@
+
+
+0.3.0 2024.05.28
+    Separating the header and the footer for the Tera template system.
+
+0.2.0 2024.05.08
+    Adding the --tera flag
+
+0.1.0 2024.04.08
+    Initial release with --simple flag
