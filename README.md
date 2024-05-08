@@ -19,6 +19,14 @@ cargo test
 cargo run
 ```
 
+## Start a Rocket-based web application using Tera template
+
+```
+rocket-starter --tera hello
+cd hello
+cargo test
+cargo run
+```
 
 
 ## Release
