@@ -14,6 +14,3 @@ repository = "https://github.com/szabgab/rocket-starter.rs/"
 [dependencies]
 clap = { version = "4.4.11", features = ["derive"] }
 
-[[bin]]
-name = "rocket-starter"
-path = "src/main.rs"
