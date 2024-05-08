@@ -10,8 +10,6 @@ readme = "README.md"
 repository = "https://github.com/szabgab/rocket-starter.rs/"
 #homepage = "https://rocket-starter.code-maven.com/"
 
-include = ["/data"]
-
 
 [dependencies]
 clap = { version = "4.4.11", features = ["derive"] }

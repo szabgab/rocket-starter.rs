@@ -14,7 +14,7 @@ fn main() {
 
     // TODO check validity of name
     //println!("{}", args.name);
-    let cargo_toml_template = include_str!("../data/simple/Cargo.toml");
+    let cargo_toml_template = include_str!("../data/simple/Cargo.toml.skel");
     let main_rs_template = include_str!("../data/simple/src/main.rs");
     let tests_rs_template = include_str!("../data/simple/src/tests.rs");
     if args.simple {
