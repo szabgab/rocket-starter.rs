@@ -7,7 +7,7 @@ struct Cli {
     simple: bool,
 
     #[arg(long)]
-    tera: bool,
+    tera1: bool,
 
     name: String,
 }
@@ -35,16 +35,16 @@ fn main() {
         return;
     }
 
-    if args.tera {
+    if args.tera1 {
         std::fs::create_dir_all(&args.name).unwrap();
 
-        let cargo_toml_template = include_str!("../data/tera/Cargo.toml.skel");
-        let main_rs_template = include_str!("../data/tera/src/main.rs");
-        let tests_rs_template = include_str!("../data/tera/src/tests.rs");
-        let templates_index_html = include_str!("../data/tera/templates/index.html.tera");
-        let templates_404_html = include_str!("../data/tera/templates/404.html.tera");
-        let templates_incl_header_html = include_str!("../data/tera/templates/incl/header.html.tera");
-        let templates_incl_footer_html = include_str!("../data/tera/templates/incl/footer.html.tera");
+        let cargo_toml_template = include_str!("../data/tera1/Cargo.toml.skel");
+        let main_rs_template = include_str!("../data/tera1/src/main.rs");
+        let tests_rs_template = include_str!("../data/tera1/src/tests.rs");
+        let templates_index_html = include_str!("../data/tera1/templates/index.html.tera");
+        let templates_404_html = include_str!("../data/tera1/templates/404.html.tera");
+        let templates_incl_header_html = include_str!("../data/tera1/templates/incl/header.html.tera");
+        let templates_incl_footer_html = include_str!("../data/tera1/templates/incl/footer.html.tera");
 
         let cargo_toml = cargo_toml_template.replace("NAME", &args.name);
 
@@ -64,5 +64,5 @@ fn main() {
         return;
     }
 
-    eprintln!("Missing flag --simple or --tera");
+    eprintln!("Missing flag --simple or --tera1");
  }
