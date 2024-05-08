@@ -21,12 +21,29 @@ cargo run
 
 ## Start a Rocket-based web application using Tera template
 
+* Template
+* 404 pages
+
 ```
-rocket-starter --tera hello
+rocket-starter --tera2 hello
 cd hello
 cargo test
 cargo run
 ```
+
+## Start a Rocket-based web application using Tera template
+
+* Template
+* 404 pages
+* Rocket.toml file with custom configuation
+
+```
+rocket-starter --tera1 hello
+cd hello
+cargo test
+cargo run
+```
+
 
 
 ## Release
