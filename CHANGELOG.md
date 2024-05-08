@@ -2,6 +2,7 @@
 
 0.3.0 2024.05.28
     Separating the header and the footer for the Tera template system.
+    Add catcher handling 404 errors and the appropriate template.
 
 0.2.0 2024.05.08
     Adding the --tera flag
