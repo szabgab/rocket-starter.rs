@@ -49,7 +49,7 @@ cargo run
 ## Release
 
 
-* Update the version number in Cargo.toml to 0.2.0
+* Update the version number in Cargo.toml to 0.3.0
 
 ```
 git commit
@@ -60,6 +60,6 @@ cargo publish
 ```
 
 ```
-git tag -a 0.2.0 -m 0.2.0
+git tag -a 0.3.0 -m 0.3.0
 git push --tags
 ```
