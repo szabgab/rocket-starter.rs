@@ -1,4 +1,5 @@
 
+    Add --tera-module skeleton
 
 0.3.0 2024.05.28
     Separating the header and the footer for the Tera template system.

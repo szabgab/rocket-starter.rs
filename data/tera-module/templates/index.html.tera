@@ -1,0 +1,7 @@
+{% include "incl/header" %}
+
+    <div>
+        Welcome to your Rocket project!
+    </div>
+
+{% include "incl/footer" %}
