@@ -21,6 +21,12 @@ struct Cli {
 fn main() {
     let args = Cli::parse();
 
+    let path = std::path::PathBuf::from(&args.name);
+    if path.exists() {
+        eprintln!("Folder {:?} already exists. Exiting.", &args.name);
+        std::process::exit(1);
+    }
+
     // TODO check validity of name
     //println!("{}", args.name);
     if args.simple {
@@ -173,7 +179,11 @@ fn main() {
         std::fs::write(format!("{}/src/app.rs", &args.name), app_rs_template).unwrap();
         std::fs::write(format!("{}/src/shared.rs", &args.name), shared_rs_template).unwrap();
         std::fs::create_dir_all(format!("{}/src/app", &args.name)).unwrap();
-        std::fs::write(format!("{}/src/app/test_app.rs", &args.name), test_app_rs_template).unwrap();
+        std::fs::write(
+            format!("{}/src/app/test_app.rs", &args.name),
+            test_app_rs_template,
+        )
+        .unwrap();
 
         std::fs::create_dir_all(format!("{}/templates/incl", &args.name)).unwrap();
         std::fs::write(
