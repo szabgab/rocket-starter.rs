@@ -74,10 +74,11 @@ fn crate_project(name: &str, skeleton: &[u8]) {
 
     let cargo_toml = cargo_toml_template.replace("NAME", name);
     std::fs::write(folder.join("Cargo.toml"), cargo_toml).unwrap();
+    println!("Project created in {name:?}");
 }
 
 fn unzip(tar_gz: &[u8], folder: &PathBuf) -> Result<(), Box<dyn Error>> {
-    println!("Unzipping to {folder:?}");
+    //println!("Unzipping to {folder:?}");
 
     let tar = GzDecoder::new(tar_gz);
     let mut archive = Archive::new(tar);
