@@ -1,7 +1,10 @@
 
+0.3.0 2024.05.22
     Add --tera-module skeleton
+    Check if folder already exists and quit if it does.
+    Refactor code embedding zipped version of all the files.
 
-0.3.0 2024.05.28
+0.3.0 2024.05.08
     Separating the header and the footer for the Tera template system.
     Add catcher handling 404 errors and the appropriate template.
     Rename --tera to --tera1
