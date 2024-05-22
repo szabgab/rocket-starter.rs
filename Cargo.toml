@@ -13,4 +13,9 @@ repository = "https://github.com/szabgab/rocket-starter.rs/"
 
 [dependencies]
 clap = { version = "4.4.11", features = ["derive"] }
+flate2 = "1.0.30"
+tar = "0.4.40"
 
+[build-dependencies]
+flate2 = "1.0.30"
+tar = "0.4.40"
