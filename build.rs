@@ -9,8 +9,10 @@ use tar::Builder;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let out_dir = env::var_os("OUT_DIR").unwrap();
-    let dest_path = Path::new(&out_dir).join("simple.tar.gz");
-    zip(dest_path, PathBuf::from("data/simple"))?;
+    for name in ["simple", "tera1"] {
+        let dest_path = Path::new(&out_dir).join(format!("{name}.tar.gz"));
+        zip(dest_path, PathBuf::from(format!("data/{name}")))?;
+    }
 
     Ok(())
 }
