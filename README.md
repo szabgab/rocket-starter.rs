@@ -55,6 +55,7 @@ cargo run
 ```
 git add .
 git commit -m "prepare for 0.4.0"
+git push
 ```
 
 ```
