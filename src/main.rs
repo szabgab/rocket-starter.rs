@@ -36,15 +36,7 @@ fn main() {
     // TODO check validity of name
     //println!("{}", args.name);
     if args.simple {
-        std::fs::create_dir_all(&args.name).unwrap();
-        let folder = PathBuf::from(&args.name);
-        unzip(simple, &folder).unwrap();
-
-        let cargo_toml_template = std::fs::read_to_string(folder.join("Cargo.toml.skel")).unwrap();
-        std::fs::remove_file(folder.join("Cargo.toml.skel")).unwrap();
-
-        let cargo_toml = cargo_toml_template.replace("NAME", &args.name);
-        std::fs::write(folder.join("Cargo.toml"), cargo_toml).unwrap();
+        crate_project(&args.name, simple);
 
         return;
     }
@@ -213,6 +205,18 @@ fn main() {
     }
 
     eprintln!("Missing flag --simple or --tera1 or --tera2 --tera-module");
+}
+
+fn crate_project(name: &str, skeleton: &[u8]) {
+    std::fs::create_dir_all(name).unwrap();
+    let folder = PathBuf::from(name);
+    unzip(skeleton, &folder).unwrap();
+
+    let cargo_toml_template = std::fs::read_to_string(folder.join("Cargo.toml.skel")).unwrap();
+    std::fs::remove_file(folder.join("Cargo.toml.skel")).unwrap();
+
+    let cargo_toml = cargo_toml_template.replace("NAME", name);
+    std::fs::write(folder.join("Cargo.toml"), cargo_toml).unwrap();
 }
 
 fn unzip(tar_gz: &[u8], folder: &PathBuf) -> Result<(), Box<dyn Error>> {
